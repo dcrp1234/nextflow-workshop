@@ -23,6 +23,8 @@ params.lengthreads = 98
 
 include { fastqc as fastqc_raw; fastqc as fastqc_trim } from "../../modules/fastqc" //addParams(OUTPUT: fastqcOutputFolder)
 include { trimmomatic } from "../../modules/trimmomatic"
+include { star_idx } from "../../modules/star"
+include { star_alignment } from "../../modules/star"
 
 // Running a workflow with the defined processes here.  
 workflow {
@@ -53,6 +55,8 @@ workflow {
 
     // Define the channels for the genome and reference file
     // ...
+    def genome_ch = Channel.fromPath(params.genome)
+    def gtf_ch = Channel.fromPath(params.gtf)
 
     // QC on raw reads
     fastqc_raw(read_pairs_ch) 
@@ -64,6 +68,8 @@ workflow {
     // Mapping
     // ... 
     // ... 
+    star_idx(genome_ch, gtf_ch)
+    star_alignment(trimmomatic.out.trim_fq, star_idx.out.index, gtf_ch)
     
     // Multi QC
     

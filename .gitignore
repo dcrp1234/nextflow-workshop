@@ -11,3 +11,6 @@ results*
 data1/
 data2/
 output/
+# pixi environments
+.pixi/*
+!.pixi/config.toml

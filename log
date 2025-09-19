@@ -1,0 +1,6 @@
+N E X T F L O W  ~  version 25.04.7
+Launching `exercises/03_first_pipeline/fastqc.nf` [trusting_wright] DSL2 - revision: 19d555cd5e
+[ggal_gut, [/hobbitholes/tookbank/pdcruze/nextflow-workshop/data/ggal_gut_1.fq.gz, /hobbitholes/tookbank/pdcruze/nextflow-workshop/data/ggal_gut_2.fq.gz]]
+[ggal_liver, [/hobbitholes/tookbank/pdcruze/nextflow-workshop/data/ggal_liver_1.fq.gz, /hobbitholes/tookbank/pdcruze/nextflow-workshop/data/ggal_liver_2.fq.gz]]
+[ff/ba3342] Submitted process > fastqc (1)
+[f3/08c794] Submitted process > fastqc (2)

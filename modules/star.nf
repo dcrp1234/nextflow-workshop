@@ -1,6 +1,6 @@
 process star_idx {
     label 'high'
-    container "quay.io/biocontainers/star:2.6.1d--0"
+    //container "quay.io/biocontainers/star:2.6.1d--0"
 
     input:
     path genome
@@ -25,7 +25,7 @@ process star_idx {
 process star_alignment {
     publishDir "${params.outdir}/mapped-reads/", mode: 'copy', overwrite: true  //, pattern: "*.bam"  
     label 'high'
-    container "quay.io/biocontainers/star:2.6.1d--0"
+    //container "quay.io/biocontainers/star:2.6.1d--0"
 
     input:
     // (trim_fq, IDX.out, gtf)

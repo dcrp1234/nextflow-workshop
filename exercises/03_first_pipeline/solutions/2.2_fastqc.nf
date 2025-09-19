@@ -7,7 +7,7 @@ params.reads = "${launchDir}/data/*{1,2}.fq.gz"
  */
     
 process fastqc {
-    container 'quay.io/biocontainers/fastqc:0.11.9--0'
+    //container 'quay.io/biocontainers/fastqc:0.11.9--0'
     
     input:
     tuple val(sample), path(read) 

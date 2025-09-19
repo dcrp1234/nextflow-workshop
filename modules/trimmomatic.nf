@@ -2,7 +2,7 @@
 process trimmomatic {
     publishDir "${params.outdir}/trimmed-reads", mode: 'copy' , overwrite: true
     label 'low'
-    container 'quay.io/biocontainers/trimmomatic:0.35--6'
+    // container 'quay.io/biocontainers/trimmomatic:0.35--6'
 
     // Same input as fastqc on raw reads, comes from the same channel. 
     input:

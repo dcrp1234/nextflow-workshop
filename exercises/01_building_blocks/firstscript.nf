@@ -10,13 +10,14 @@
 
 // Defining the process that is executed
 process valuesToFile {
+    tag "$nums, $strs"
 
     input: 
     val nums
     val strs
     
     output:
-    path 'result.txt'
+    path 'result.txt', emit: result_ch
     
     script:
     """
@@ -31,5 +32,6 @@ workflow {
     def strings_ch = Channel.of('a','b')
 
     valuesToFile(numbers_ch, strings_ch)
+    valuesToFile.out.result_ch.view()
 }
 
